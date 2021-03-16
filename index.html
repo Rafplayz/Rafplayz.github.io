@@ -10,10 +10,17 @@
         }
     </style>
     <script src="break-eternity.js"> </script>
-    <script>
+    <script> var Num = new Decimal(0) </script>
+    <script defer>
         var test = new Decimal('1e14');
-        console.log(test);
+        console.log(test)
+        function add10ToNum() {
+            Num.e++;
+            
+            return Num;
+        }
     </script>
 </head>
-<p> wooashashhh its like code n shit</p>
+<p id="Number"></p>
+<button onclick="add10ToNum()"> "Add a 0" </button>
 
