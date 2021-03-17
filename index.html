@@ -18,10 +18,15 @@
             document.getElementById("Number").innerText = Num;
             return Num;
         }
+        function remove10FromNum() {
+            Num.e = Num.e - 1;
+            document.getElementById("Number").innerText = Num;
+            return Num;
+        }
         function loadPage() {
             var test = new Decimal('1e14');
             console.log(test.mag)
-            document.getElementById("buttons").innerHTML = '<p id="Number">Loading...</p> <button onclick="add10ToNum()"> Add a 0 </button>'
+            document.getElementById("buttons").innerHTML = '<p id="Number">Loading...</p> <button onclick="add10ToNum()"> Add a 0 </button><button onclick="remove10FromNum()">Remove a 0</button>'
             if(document.getElementById("Number").innerText != null) {
                 try {
                     document.getElementById("Number").innerText = Num;
