@@ -10,17 +10,23 @@
         }
     </style>
     <script src="break-eternity.js"> </script>
-    <script> var Num = new Decimal(0) </script>
+    <script> var Num = new Decimal(1) </script>
     <script defer>
-        var test = new Decimal('1e14');
-        console.log(test)
         function add10ToNum() {
             Num.e++;
-            
+            document.getElementById("Number").innerText = Num;
             return Num;
+        }
+        function loadPage() {
+            var test = new Decimal('1e14');
+            console.log(test.mag)
+            document.getElementById("buttons").innerHTML = '<p id="Number">1</p> <button onclick="add10ToNum()"> Add a 0 </button>'
+            
         }
     </script>
 </head>
-<p id="Number"></p>
-<button onclick="add10ToNum()"> "Add a 0" </button>
+<button onclick="loadPage()"> Load page </button>
+<div id="buttons">
+
+</div>
 
