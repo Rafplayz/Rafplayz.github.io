@@ -12,6 +12,7 @@
     <script src="break-eternity.js"> </script>
     <script> var Num = new Decimal(1) </script>
     <script defer>
+
         function add10ToNum() {
             Num.e++;
             document.getElementById("Number").innerText = Num;
@@ -20,13 +21,19 @@
         function loadPage() {
             var test = new Decimal('1e14');
             console.log(test.mag)
-            document.getElementById("buttons").innerHTML = '<p id="Number">1</p> <button onclick="add10ToNum()"> Add a 0 </button>'
-            
+            document.getElementById("buttons").innerHTML = '<p id="Number">Loading...</p> <button onclick="add10ToNum()"> Add a 0 </button>'
+            if(document.getElementById("Number").innerText != null) {
+                try {
+                    document.getElementById("Number").innerText = Num;
+                }
+                catch {
+                    console.log("Error! Cannot set InnerText")
+                }
+            }
         }
     </script>
 </head>
 <button onclick="loadPage()"> Load page </button>
 <div id="buttons">
-
 </div>
 
